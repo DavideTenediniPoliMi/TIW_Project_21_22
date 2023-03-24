@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<link rel="stylesheet" href="CSS/global.css">
+	<link rel="stylesheet" href="CSS/header.css">
+	<link rel="stylesheet" href="CSS/home.css">
+	<link rel="stylesheet" href="CSS/document.css">
+	<link rel="stylesheet" href="CSS/subfolder.css">
+	<link rel="stylesheet" href="CSS/modal.css">
+	<link rel="stylesheet" href="CSS/createContent.css">
+	<script src="JS/utils.js" charset="utf-8" defer></script>
+	<script src="JS/home.js" charset="utf-8" defer></script>
+</head>
+<body class="v-container">
+	<div class="page-wrapper content">
+		<div class="h-container header">	
+			<h1 id="title" class="title">
+				title
+			</h1>
+			
+			<div class="h-container buttons">
+				<a id="go_back_button" class="content button nav-button disabled">Go Back</a>
+				<img id="bin" class="bin-svg content disabled" src="assets/trash.svg"/>
+				<a id="logout_button" class="content button nav-button">Logout</a>
+			</div>
+		</div>
+		
+		<div id="modal" class="modal">
+		  <div id="modal-content" class="modal-content">
+		    <span id="close-button" class="close">&times;</span>
+		    You are deleting <span id="content-name"></span>. <br><br>
+		    Are you sure?
+		    <input id="confirm-button" class="button" type="submit" value="YES!"/>
+		  </div>
+		</div>
+	
+		<div class="v-container folder-container">
+			<ul id="folderTree">
+			</ul>
+			<div id="document_details" class="field-wrapper v-container disabled"> 
+	            <div class="field-entry content h-container">
+	                <span class="label"> Name </span>
+	                <div class="value">
+	                    <i class="big input-arrow arrow right"></i>
+	                    <span id="document_name">name</span>
+	                </div>
+	            </div>
+	            <div class="field-entry content h-container">
+	                <span class="label"> Creation date </span>
+	                <div class="value">
+	                    <i class="big input-arrow arrow right"></i>
+	                    <span id="document_date">date</span>
+	                </div>
+	            </div>
+	            <div class="field-entry content h-container">
+	                <span class="label"> Summary </span>
+	                <div class="value">
+	                    <i class="big input-arrow arrow right"></i>
+	                    <span id="document_summary">summary</span>
+	                </div>
+	            </div>
+	            <div class="field-entry content h-container">
+	                <span class="label"> Type </span>
+	                <div class="value">
+	                    <i class="big input-arrow arrow right"></i>
+	                    <span id="document_type">type</span>
+	                </div>
+	            </div>
+	            <div class="field-entry content h-container">
+	                <span class="label"> Owner </span>
+	                <div class="value">
+	                    <i class="big input-arrow arrow right"></i>
+	                    <span id="document_owner">owner</span>
+	                </div>
+	            </div>
+	        </div>
+		</div>
+	</div>
+</body>
+</html>

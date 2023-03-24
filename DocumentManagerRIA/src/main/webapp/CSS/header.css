@@ -1,0 +1,35 @@
+.page-wrapper {
+    height: 100%;
+    width: 90%;
+}
+
+.header {
+    height: 15%;
+    justify-content: space-between;
+}
+
+.title {
+    width: 70%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.buttons {
+    width: 30%;
+    height: 100%;
+}
+
+@media (max-width: 900px) {
+    .buttons {
+        flex-direction: column;
+    }
+}
+
+.nav-button {
+    padding: 10px;
+}
+
+.bin-svg {
+	width: 40px;
+	height: 45px;
+}

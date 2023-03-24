@@ -1,0 +1,21 @@
+.field-wrapper {
+    width: 70%;
+    min-width: 400px;
+    height: 50%;
+    margin-inline: auto;
+    justify-content: space-between;
+    font-size: x-large;
+}
+
+.field-entry {
+    width: 90%;
+}
+
+.label {
+    width: 30%;
+    margin-right: auto;
+}
+
+.value {
+    width: 50%;
+}

@@ -1,0 +1,159 @@
+html,body {
+    --bgcolor : #05151a;
+    --font-color : #39FF14;
+
+    height:100%;
+    width:100%;
+    margin:0;
+    background-color: var(--bgcolor);
+    color: var(--font-color);
+    font-family: 'Dina';
+    font-size: large;
+}
+
+/*Flex box containers*/
+.h-container {
+	display: flex;
+    justify-content: space-around;
+}
+
+.v-container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.content {
+	margin: auto;
+}
+
+/*Remove default style*/
+input {
+    -webkit-appearance: none;
+    border: none;
+    background-image: none;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    
+    caret-color: var(--font-color);
+    color: var(--font-color);
+}
+
+select,
+option {
+    background-color: var(--bgcolor);
+    color: var(--font-color);
+    font-size: 23px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+input::placeholder {
+    color: var(--font-color);
+    opacity: 0.25;
+}
+
+input:focus::-webkit-input-placeholder {
+    color: var(--bgcolor);
+}
+
+input:focus {
+    outline: none;
+}
+
+.button {
+	border-radius: 10px;
+    border-color: var(--font-color);
+    border-style: solid;
+    border-width: 1px;
+}
+
+a, a:hover, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover,
+.fake-link:hover,
+input[type="submit"] {
+	cursor: pointer;
+}
+
+.link,
+a:hover,
+.button:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.disabled {
+	display: none;
+}
+
+a.disabled {
+	display: block;
+	visibility: hidden;
+}
+
+img.disabled {
+	display: block;
+	visibility: hidden;
+}
+
+/*Style fake links*/
+.fake-link {
+	text-decoration: underline;
+	color: var(--font-color);
+}
+
+.fake-link {
+	text-decoration: underline;
+	color: var(--font-color);
+}
+
+/*Arrows*/
+.arrow {
+    border: solid var(--font-color);
+    border-width: 0 3px 3px 0;
+    padding: 3px;
+    display: inline-block;
+}
+
+.input-arrow {
+	justify-self: flex-end;
+    margin-left: auto;
+    margin-right: 5px;
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.big {
+	height: 8px;
+    width: 8px;
+}
+
+/*Cursor blink*/
+@keyframes cursor-blink {
+  0% {
+    opacity: 0;
+  }
+}
+
+.blinker {
+	animation: cursor-blink 1.5s steps(2) infinite;
+}
