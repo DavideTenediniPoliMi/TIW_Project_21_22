@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Welcome!</title>
+	<link rel="stylesheet" th:href="@{/CSS/global.css}">
+	<link rel="stylesheet" th:href="@{/CSS/login.css}">
+</head>
+<body class="h-container">
+	<div class="page-wrapper v-container content">
+		<h1 class="title content">Welcome to your document manager!</h1>
+
+		<div class="content error">
+			<span th:if="${errorText}" th:text="${errorText}">An error occurred!</span>
+		</div>
+
+        <div class="form-wrapper content">
+            <input type='checkbox' id='form-toggle' th:checked="${isRegister}">
+
+            <form class="v-container form-container" id="login-form" action="CheckLogin" method="POST">
+                <div class="field-wrapper content v-container">
+                    <div class="content form-entry h-container">
+                        username <i class="input-arrow arrow right"></i> <input type="text" placeholder="username" name="username" required>
+                    </div>
+                    <div class="content form-entry h-container">
+                        password <i class="input-arrow arrow right"></i> <input type="password" placeholder="password" name="password" required>
+                    </div>
+                </div>
+                <div class="content h-container input-footer">
+                    <div class="link-redirect">
+                        Don't have an account? <label class="fake-link" for='form-toggle'>Register here!</label>
+                    </div>
+
+                    <input class="button" type="submit" value="Login">
+                </div>
+            </form>
+    
+            <form class="v-container form-container" id="registration-form" action="RegisterUser" method="POST">
+                <div class="field-wrapper content v-container">
+                    <div class="content form-entry h-container">
+                        username <i class="input-arrow arrow right"></i> <input type="text" placeholder="username" name="username" maxlength="30" required>
+                    </div>
+                    <div class="content form-entry h-container">
+                        email <i class="input-arrow arrow right"></i> <input type="email" placeholder="email" name="email" maxlength="320" required>
+                    </div>
+                    <div class="content form-entry h-container">
+                        password <i class="input-arrow arrow right"></i> <input type="password" placeholder="password" name="password" required>
+                    </div>
+                    <div class="content form-entry h-container">
+                        repeat password <i class="input-arrow arrow right"></i> <input type="password" placeholder="repeat password" name="passwordDuplicate" required> 
+                    </div>
+                </div>
+                <div class="content h-container input-footer">
+                    <div class="link-redirect">
+                        Already have an account? <label class="fake-link" for='form-toggle'>Login here!</label>
+                    </div>
+                    <input class="button register" type="submit" value="Register">
+                </div>
+            </form>
+        </div>
+	</div>
+</body>
+</html>

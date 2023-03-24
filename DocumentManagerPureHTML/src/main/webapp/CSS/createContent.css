@@ -1,0 +1,117 @@
+.page-wrapper {
+    height: 100%;
+    width: 70%;
+    justify-content: space-around;
+    min-width: 390px;
+}
+
+.form-wrapper {
+    align-self: flex-end;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 80%;
+    width: 60%;
+}
+
+#form-toggle-folder-other,
+#form-toggle-subfolder-document,
+#other-form {
+    display: none;
+}
+
+#form-toggle-folder-other:checked~#other-form {
+    display: flex;
+}
+
+#form-toggle-folder-other:checked~#folder-form,
+#form-toggle-folder-other:checked~#other-form #document-form{
+    display: none;
+}
+
+#form-toggle-subfolder-document:checked~#other-form #document-form {
+	display: flex;
+}
+
+#form-toggle-subfolder-document:checked~#other-form #subfolder-form {
+	display: none;
+}
+
+.form-container {
+    height: 100%;
+    width: 100%;
+    justify-content: flex-start;
+    font-size: large;
+}
+
+#other-form {
+    width: 100%;
+    height: 100%;
+}
+
+.form-nav {
+    height: 10%;
+    justify-content: space-between;
+}
+
+.right-arrow {
+    margin-left: auto;
+    width: fit-content;
+    align-self: center;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.left-arrow {
+    margin-right: auto;
+    width: fit-content;
+    align-self: center;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.field-wrapper {
+    height: 50%;
+    width: 100%;
+    justify-content: flex-start;
+    font-size: 27px;  
+}
+
+.input-footer {
+    font-size: 17px;
+    height: 8%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+input {
+    font-size: 27px;
+    width: 43%;
+}
+
+select {
+    width: 43%;
+}
+
+.form-container input::placeholder {
+    font-size: 22px;
+}
+
+.form-entry {
+    height: 23%;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0px;
+}
+
+input[type="submit"] {
+    width: 30%;
+    height: 60%;
+}

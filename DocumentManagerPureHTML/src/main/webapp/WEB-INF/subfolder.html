@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title th:text="|Subfolder: ${subfolder.name}|">title</title>
+	<link rel="stylesheet" th:href="@{/CSS/global.css}">
+	<link rel="stylesheet" th:href="@{/CSS/header.css}">
+	<link rel="stylesheet" th:href="@{/CSS/subfolder.css}">
+</head>
+<body class="v-container">
+	<div class="page-wrapper content">
+		<div class="h-container header">
+            <h1 class="title">
+                <span th:text="|C:\${subfolder.getOwner().username}\${subfolder.parentFolder.name}\|">name</span>
+                <span th:text="|${subfolder.name}\|">doc</span>
+            	<b class="blinker">_</b>
+            </h1>
+            
+            <div class="h-container buttons">
+                <a class="content button nav-button" th:href="@{/GoToHomePage}">Go Back</a> 
+                <a class="content button nav-button" th:href="@{/Logout}">Logout</a>
+            </div>
+        </div>
+	
+	
+		<div th:if="${documents.size() == 0}">
+			This subfolder is empty!
+		</div>
+	
+		<div class="v-container document-container" th:unless="${documents.size() == 0}">
+			<ul>
+				<li th:each="document : ${documents}">
+					<div class="document">
+						<img class="document-png" th:src="@{/assets/document.png}"/>
+						<a th:href="@{/GetDocumentDetails(documentId = ${document.id})}" th:text="${document.name}">name</a>
+						<div class="end h-container">
+						    <div class="content">
+						    	creation date <i class="input-arrow arrow right"></i><span th:text="${document.creationDate}">2022-22-22</span>
+						    </div>
+						    <a class="button move-button" th:href="@{/GoToHomePage(documentId = ${document.id})}">Move</a> 
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

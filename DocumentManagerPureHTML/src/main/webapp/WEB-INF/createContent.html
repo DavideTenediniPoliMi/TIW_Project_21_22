@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Create Content</title>
+	<link rel="stylesheet" th:href="@{/CSS/global.css}">
+	<link rel="stylesheet" th:href="@{/CSS/header.css}">
+	<link rel="stylesheet" th:href="@{/CSS/createContent.css}">
+</head>
+<body>
+	<div class="page-wrapper v-container content">
+		<div class="h-container header">
+            <h1 class="title">
+               	C:\<span th:text="${session.user.username}">username</span>\<i class="big input-arrow arrow right"></i>CreateContent.exe<b class="blinker">_</b>
+            </h1>
+            <div class="h-container buttons">
+                <a class="content button nav-button" th:href="@{/GoToHomePage}">Go Back</a> 
+                <a class="content button nav-button" th:href="@{/Logout}">Logout</a>
+            </div>
+        </div>
+	
+		<div class="form-wrapper content">
+			<input type='checkbox' id='form-toggle-folder-other'>
+			<input type='checkbox' id='form-toggle-subfolder-document'>
+		
+			<form class="v-container form-container" id="folder-form" th:action='@{/CreateContent(contentType = FOLDER)}' method="POST">
+				<div class="form-nav h-container"> 
+                    <label class="button right-arrow" for="form-toggle-folder-other">Subfolder or Document<i class="arrow right"></i></label>
+                </div>
+                <div class="field-wrapper v-container">
+                    <div class="form-entry">
+                        Folder Name <i class="input-arrow arrow right"></i> <input placeholder="name" name="name" maxlength="30" required/>
+                    </div>
+                </div>
+                <div class="input-footer">
+                    <input class="button" type="submit" value="Create"/>
+                </div>
+			</form>
+			
+			<div id="other-form">
+				<form class="v-container form-container" id="subfolder-form" th:action='@{/CreateContent(contentType = SUBFOLDER)}' method="POST">
+					<div class="form-nav h-container"> 
+                        <label class="button left-arrow" for='form-toggle-folder-other'><i class="arrow left"></i>Folder</label>
+                        <label class="button right-arrow" for='form-toggle-subfolder-document'>Document<i class="arrow right"></i></label>
+                    </div>
+                    <div class="field-wrapper v-container">
+                        <div class="form-entry">
+                            Subfolder Name <i class="input-arrow arrow right"></i> <input placeholder="name" name="name" maxlength="30" required/>
+                        </div>
+                        <div class="form-entry">
+                            Subfolder location <i class="input-arrow arrow right"></i> 
+                            <select name="parentFolderId" required>
+                                <option disabled selected value="">Select a folder</option>
+                                <option th:each="folder : ${folders}" th:value="${folder.id}" th:text="${folder.name}"/>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-footer">
+                        <input class="button" type="submit" value="Create"/>
+                    </div>
+				</form>
+				
+				<form class="v-container form-container" id="document-form" th:action='@{/CreateContent(contentType = DOCUMENT)}' method="POST">
+                    <div class="form-nav h-container"> 
+                        <label class="button left-arrow" for='form-toggle-subfolder-document'><i class="arrow left"></i>Folder or Subfolder</label>
+                    </div>
+                    <div class="field-wrapper v-container">
+                        <div class="form-entry">
+                            Document Name <i class="input-arrow arrow right"></i> <input placeholder="name" name="name" maxlength="30" required/>
+                        </div>
+                        <div class="form-entry">
+                            Document location <i class="input-arrow arrow right"></i> 
+                            <select name="parentSubfolderId" required>
+                                <option disabled selected value="">Select a subfolder</option>
+                                <option th:each="subfolder : ${subfolders}" th:value="${subfolder.id}" th:text="|${subfolder.parentFolder.name}\${subfolder.name}|"/>
+                            </select>
+                        </div>
+                        <div class="form-entry">
+                            Summary <i class="input-arrow arrow right"></i> <input placeholder="summary" name="summary" required/>
+                        </div>
+                        <div class="form-entry">
+                            Type <i class="input-arrow arrow right"></i> <input placeholder="ext" name="type" maxlength="3" required/>
+                        </div>
+                    </div>
+                    <div class="input-footer">
+                        <input class="button" type="submit" value="Create"/>
+                    </div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

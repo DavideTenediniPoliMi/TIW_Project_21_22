@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title th:text="|Document: ${document.name}|">title</title>
+	<link rel="stylesheet" th:href="@{/CSS/global.css}">
+	<link rel="stylesheet" th:href="@{/CSS/header.css}">
+	<link rel="stylesheet" th:href="@{/CSS/document.css}">
+</head>
+<body>
+	<div class="page-wrapper content">
+		<div class="h-container header">
+            <h1 class="title">
+                <span th:text="|C:\${document.getOwner().username}\${document.parentFolder.parentFolder.name}\|">name</span>
+                <span th:text="|${document.parentFolder.name}\${document.name}.${document.type}|">doc</span>
+            	<b class="blinker">_</b>
+            </h1>
+            
+            <div class="h-container buttons">
+                <a class="content button nav-button" th:href="@{/GetSubfolderContent(subfolderId = ${document.parentFolder.id})}">Go Back</a> 
+                <a class="content button nav-button" th:href="@{/Logout}">Logout</a>
+            </div>
+        </div>
+	
+		<div class="field-wrapper v-container content"> 
+            <div class="field-entry content h-container">
+                <span class="label"> Name </span>
+                <div class="value">
+                    <i class="big input-arrow arrow right"></i>
+                    <span th:text="${document.name}">name</span>
+                </div>
+            </div>
+            <div class="field-entry content h-container">
+                <span class="label"> Creation date </span>
+                <div class="value">
+                    <i class="big input-arrow arrow right"></i>
+                    <span th:text="${document.creationDate}">date</span>
+                </div>
+            </div>
+            <div class="field-entry content h-container">
+                <span class="label"> Summary </span>
+                <div class="value">
+                    <i class="big input-arrow arrow right"></i>
+                    <span th:text="${document.summary}">summary</span>
+                </div>
+            </div>
+            <div class="field-entry content h-container">
+                <span class="label"> Type </span>
+                <div class="value">
+                    <i class="big input-arrow arrow right"></i>
+                    <span th:text="|.${document.type}|">type</span>
+                </div>
+            </div>
+            <div class="field-entry content h-container">
+                <span class="label"> Owner </span>
+                <div class="value">
+                    <i class="big input-arrow arrow right"></i>
+                    <span th:text="${document.getOwner().username}">owner</span>
+                </div>
+            </div>
+        </div>
+	</div>
+</body>
+</html>

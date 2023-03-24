@@ -1,0 +1,38 @@
+.folder-container {
+    font-size: x-large;
+    justify-content: flex-start;
+    width: 60%;
+    min-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.folder-svg {
+    width: 30px; 
+    height: 22,5px;
+}
+
+.folder {
+    height: 35px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.folder-container > ul > li {
+    margin-top: 25px;
+}
+
+.deselected {
+	opacity: 0.25;
+}
+
+.date {
+    margin-left: auto;
+    font-size: medium;
+}
+
+li ul li {
+    padding-left: 9%;
+}

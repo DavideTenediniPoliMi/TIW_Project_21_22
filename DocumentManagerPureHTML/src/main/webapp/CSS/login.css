@@ -1,0 +1,88 @@
+.page-wrapper {
+    height: 50%;
+    width: 50%;
+    min-width: 390px;
+}
+
+.title {
+    font-size: 45px;
+    height: 25%;
+}
+
+.error {
+    height: 5%;
+    font-size: 22px;
+}
+
+.form-wrapper {
+    height: 65%;
+    width: 70%;
+}
+
+/*Toggle between login and register*/
+#form-toggle,
+#registration-form {
+    display: none;
+}
+
+#form-toggle:checked~#registration-form {
+    display: flex;
+}
+
+#form-toggle:checked~#login-form {
+    display: none;
+}
+
+/*Forms*/
+.form-container {
+    height: 100%;
+    width: 100%;
+    font-size: 27px;
+}
+
+.field-wrapper {
+    height: 70%;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.input-footer {
+    font-size: 17px;
+    height: 20%;
+    width: 95%;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*Fields*/
+.form-entry {
+    height: 20%;
+    width: 95%;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0px;
+}
+
+input {
+    font-size: 27px;
+    width: 43%;
+}
+
+.form-container input::placeholder {
+    font-size: 22px;
+}
+
+.link-redirect {
+    width: 40%;
+}
+
+input[type="submit"] {
+    width: 30%;
+    height: 60%;
+}
+
+.register {
+	min-width: 115px;
+}
